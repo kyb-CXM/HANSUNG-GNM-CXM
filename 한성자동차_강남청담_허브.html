@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d0e10">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="한성자동차">
+<title>한성자동차 강남·청담 안내</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+  :root{
+    --bg:#0d0e10; --panel:#17181b; --panel-hover:#1e2024; --line:#2a2c30;
+    --text:#f2f2f0; --sub:#9a9ca1; --accent:#00a5c8;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html{background:var(--bg);}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;
+    padding:40px 18px calc(40px + env(safe-area-inset-bottom));}
+  .eyebrow{font-size:12px;letter-spacing:0.3em;color:var(--accent);margin-bottom:8px;font-weight:700;}
+  h1{font-size:24px;font-weight:900;margin:0 0 4px;text-align:center;}
+  .sub{color:var(--sub);font-size:13px;margin-bottom:36px;text-align:center;}
+  .grid{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .full{grid-column:1 / -1;}
+  a.card, div.card{
+    display:flex;align-items:center;justify-content:center;gap:10px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:16px 14px;min-height:24px;
+    text-decoration:none;color:var(--text);font-size:14px;font-weight:700;
+    transition:background-color .12s ease, transform .1s ease;
+  }
+  a.card:active{transform:scale(0.97);background:var(--panel-hover);}
+  @media (hover:hover){ a.card:hover{background:var(--panel-hover);border-color:var(--accent);} }
+  .dim{opacity:0.5;border-style:dashed;}
+  .dim span{color:#8a8c91;font-weight:500;}
+  footer{margin-top:50px;font-size:11px;color:#55575c;text-align:center;line-height:1.6;}
+
+  /* ---------- PIN lock screen ---------- */
+  #lock{
+    position:fixed;inset:0;background:var(--bg);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:24px;z-index:10;
+  }
+  #lock .pin-title{font-size:19px;font-weight:900;margin:18px 0 4px;}
+  #lock .pin-sub{color:var(--sub);font-size:13px;margin-bottom:34px;}
+  .pin-boxes{display:flex;gap:12px;margin-bottom:22px;}
+  .pin-boxes input{
+    width:52px;height:60px;text-align:center;font-size:24px;font-weight:700;
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--text);
+    outline:none;
+  }
+  .pin-boxes input:focus{border-color:var(--accent);}
+  #pin-error{color:#e5484d;font-size:12.5px;height:16px;margin-bottom:4px;}
+  .star-mark{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent);}
+  #content{display:none;}
+</style>
+</head>
+<body>
+
+  <div id="lock">
+    <div class="star-mark">★</div>
+    <div class="pin-title">한성자동차</div>
+    <div class="pin-sub">PIN 4자리를 입력하세요</div>
+    <div class="pin-boxes">
+      <input type="tel" inputmode="numeric" maxlength="1" autocomplete="off">
+      <input type="tel" inputmode="numeric" maxlength="1" autocomplete="off">
+      <input type="tel" inputmode="numeric" maxlength="1" autocomplete="off">
+      <input type="tel" inputmode="numeric" maxlength="1" autocomplete="off">
+    </div>
+    <div id="pin-error"></div>
+  </div>
+
+  <div id="content">
+    <div class="eyebrow">HANSUNG MOTOR</div>
+    <h1>강남 · 청담 전시장 안내</h1>
+    <div class="sub">원하는 항목을 눌러 확인하세요</div>
+
+    <div class="grid">
+      <a class="card" href="https://naver.me/5ajkdssJ" target="_blank" rel="noopener">강남 전시차</a>
+      <a class="card" href="https://naver.me/5OlfUpZc" target="_blank" rel="noopener">청담 전시차</a>
+
+      <a class="card" href="https://naver.me/5K6f2C99" target="_blank" rel="noopener">강남 시승차</a>
+      <a class="card" href="https://naver.me/GzdLjx5a" target="_blank" rel="noopener">청담 시승차</a>
+
+      <a class="card" href="https://naver.me/5xgD8ymX" target="_blank" rel="noopener">강남 시승코스</a>
+      <a class="card" href="https://naver.me/FXnaqfD7" target="_blank" rel="noopener">청담 시승코스</a>
+
+      <div class="full"><div class="card dim"><span>추가사항 · 준비중</span></div></div>
+
+      <a class="card" href="https://naver.me/FetssvvE" target="_blank" rel="noopener">강남 음료</a>
+      <a class="card" href="https://naver.me/GQGRA0sk" target="_blank" rel="noopener">강남 와이파이</a>
+
+      <div class="full"><a class="card" href="https://www.mercedes-benz.co.kr/passengercars/models/catalog.html" target="_blank" rel="noopener">카탈로그</a></div>
+    </div>
+
+    <footer>한성자동차(주) &nbsp;·&nbsp; Official Dealer for Mercedes-Benz Passenger Cars</footer>
+  </div>
+
+<script>
+(function(){
+  var CORRECT_PIN = "1234";
+  var lock = document.getElementById('lock');
+  var content = document.getElementById('content');
+  var boxes = document.querySelectorAll('.pin-boxes input');
+  var errorEl = document.getElementById('pin-error');
+
+  function unlock(){
+    lock.style.display = 'none';
+    content.style.display = 'flex';
+    content.style.flexDirection = 'column';
+    content.style.alignItems = 'center';
+    try { sessionStorage.setItem('hsm_unlocked', '1'); } catch(e){}
+  }
+
+  // Already unlocked earlier this session
+  try {
+    if (sessionStorage.getItem('hsm_unlocked') === '1') {
+      unlock();
+      return;
+    }
+  } catch(e){}
+
+  boxes[0].focus();
+
+  boxes.forEach(function(box, i){
+    box.addEventListener('input', function(){
+      box.value = box.value.replace(/[^0-9]/g, '').slice(0,1);
+      if (box.value && i < boxes.length - 1) boxes[i+1].focus();
+      checkComplete();
+    });
+    box.addEventListener('keydown', function(e){
+      if (e.key === 'Backspace' && !box.value && i > 0) boxes[i-1].focus();
+    });
+  });
+
+  function checkComplete(){
+    var entered = Array.prototype.map.call(boxes, function(b){ return b.value; }).join('');
+    if (entered.length === 4) {
+      if (entered === CORRECT_PIN) {
+        errorEl.textContent = '';
+        unlock();
+      } else {
+        errorEl.textContent = '번호가 올바르지 않습니다';
+        boxes.forEach(function(b){ b.value = ''; });
+        boxes[0].focus();
+      }
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
