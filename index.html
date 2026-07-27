@@ -26,13 +26,13 @@
   .grid{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .full{grid-column:1 / -1;}
   a.card, div.card{
-    display:flex;align-items:center;justify-content:center;gap:10px;background:var(--panel);
-    border:1px solid var(--line);border-radius:12px;padding:16px 14px;min-height:24px;
+    display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,var(--panel-hover),var(--panel));
+    border:1px solid var(--line);border-radius:14px;padding:16px 14px;min-height:24px;box-shadow:0 4px 0 rgba(0,0,0,0.4),0 8px 14px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.07);
     text-decoration:none;color:var(--text);font-size:14px;font-weight:700;
-    transition:background-color .12s ease, transform .1s ease;
+    transition:background-color .12s ease, transform .12s ease, box-shadow .12s ease;
   }
-  a.card:active{transform:scale(0.97);background:var(--panel-hover);}
-  @media (hover:hover){ a.card:hover{background:var(--panel-hover);border-color:var(--accent);} }
+  a.card:active{transform:translateY(3px) scale(0.98);background:var(--panel-hover);box-shadow:0 1px 0 rgba(0,0,0,0.4),0 2px 6px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.05);}
+  @media (hover:hover){ a.card:hover{background:var(--panel-hover);border-color:var(--accent);box-shadow:0 5px 0 rgba(0,0,0,0.4),0 10px 18px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.08);} }
   .dim{opacity:0.5;border-style:dashed;}
   .dim span{color:#8a8c91;font-weight:500;}
   footer{margin-top:50px;font-size:11px;color:#55575c;text-align:center;line-height:1.6;}
@@ -54,7 +54,7 @@
     <a class="card" href="https://naver.me/FEgY5Kui" target="_blank" rel="noopener">강남 시승코스</a>
     <a class="card" href="https://naver.me/FXnaqfD7" target="_blank" rel="noopener">청담 시승코스</a>
 
-    <div class="full"><div class="card dim"><span>추가사항 · 준비중</span></div></div>
+    <div class="full"><div class="card dim"><span>강남지점</span></div></div>
 
     <a class="card" href="https://naver.me/FetssvvE" target="_blank" rel="noopener">강남 음료</a>
     <a class="card" href="https://naver.me/GQGRA0sk" target="_blank" rel="noopener">강남 와이파이</a>
