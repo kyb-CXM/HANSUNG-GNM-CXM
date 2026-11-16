@@ -1,0 +1,5 @@
+# lead60 대시보드는 매번 최신본을 받도록 캐시하지 않음
+[[headers]]
+  for = "/lead60/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
